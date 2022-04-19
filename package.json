@@ -39,12 +39,15 @@
 		"eslint": "7.28.0",
 		"eslint-plugin-react": "7.24.0",
 		"eslint-plugin-react-hooks": "4.2.0",
+		"husky": "^7.0.0",
 		"i18next": "19.5.0",
 		"identity-obj-proxy": "^3.0.0",
+		"install": "^0.13.0",
 		"jest": "^27.5.1",
 		"jest-canvas-mock": "^2.3.1",
 		"json-date-parser": "1.0.1",
 		"jsvalidator": "1.2.0",
+		"lint-staged": "^12.3.8",
 		"lodash": "4.17.19",
 		"mocha": "5.2.0",
 		"postcss": "^8.3.6",
@@ -106,11 +109,15 @@
 		"publish": "./dev/publish",
 		"storybook": "start-storybook -p 10000",
 		"package-lock": "cp package-lock.json package-lock-mounted.json",
-		"style": "eslint ."
+		"style": "eslint .",
+		"prepare": "husky install"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/simpleviewinc/sv-mosaic"
 	},
-	"license": "MIT"
+	"license": "MIT",
+	"lint-staged": {
+		"*{.js,jsx,ts,tsx}": "eslint . --cache --fix"
+	}
 }
