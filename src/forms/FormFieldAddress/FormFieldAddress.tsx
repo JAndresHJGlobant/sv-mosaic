@@ -117,7 +117,7 @@ const FormFieldAddress = (props: MosaicFieldProps<AddressFieldDef, IAddress[]>):
 		const listOfAddresses = [...value];
 		listOfAddresses.splice(addressIndex, 1);
 
-		if (listOfAddresses.length > 0) {
+		if (listOfAddresses?.length > 0) {
 			await onChange(listOfAddresses);
 		} else {
 			await onChange(undefined);
@@ -211,7 +211,7 @@ const FormFieldAddress = (props: MosaicFieldProps<AddressFieldDef, IAddress[]>):
 			<Drawer open={open} onClose={handleClose}>
 				<AddressDrawer
 					open={open}
-					value={value}
+					value={value ?? []}
 					onChange={onChange}
 					isEditing={isEditing}
 					addressIdx={addressIdx}

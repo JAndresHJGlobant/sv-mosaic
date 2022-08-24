@@ -20,7 +20,7 @@ const DropdownSingleSelection = (props: MosaicFieldProps<DropdownSingleSelection
 		error,
 		onChange,
 		onBlur,
-		value
+		value = ""
 	} = props;
 
 	const [isOpen, setIsOpen] = useState(false);

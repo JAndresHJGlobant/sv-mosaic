@@ -204,7 +204,7 @@ const AdvancedSelectionDrawer = (props: AdvanceSelectionDrawerPropTypes): ReactE
 	]);
 
 	const searchInput = useCallback((props): ReactElement => {
-		const searchKeyword = props.value.trim();
+		const searchKeyword = props.value?.trim();
 
 		/**
 		 * Handler for the input element
@@ -242,10 +242,10 @@ const AdvancedSelectionDrawer = (props: AdvanceSelectionDrawerPropTypes): ReactE
 					type='text'
 					placeholder='Search...'
 					onChange={onInputChange}
-					value={props.value ? props.value : ""}
+					value={props?.value ?? ""}
 					disabled={fieldDef?.disabled}
 				/>
-				{props.value && fieldDef?.inputSettings?.createNewOption && (
+				{props?.value && fieldDef?.inputSettings?.createNewOption && (
 					<Button
 						label='Create'
 						variant='text'
